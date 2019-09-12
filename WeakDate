@@ -1,0 +1,59 @@
+import array
+
+noOfDayInMonth = 31  # enter the nuber of days in the month
+monthStartsWith = "Th"  # enter the day of the week the month starts with
+
+# ___________________________________________________________________
+weakDayM = ["M", "T", "W", "Th", "F", "Sa", "S"]
+weakDayT = ["T", "W", "Th", "F", "Sa", "S", "M"]
+weakDayW = ["W", "Th", "F", "Sa", "S", "M","T"]
+weakDayTh = ["Th", "F", "Sa", "S", "M","T","W"]
+weakDayF = ["F", "Sa", "S", "M","T","W","Th"]
+weakDaySa =["Sa", "S", "M","T","W","Th", "F"]
+weakDayS = ["S", "M","T","W","Th", "F", "Sa"]
+
+if monthStartsWith == "S":
+    weakDay = weakDayS
+elif monthStartsWith == "M":
+    weakDay = weakDayM
+elif monthStartsWith == "T":
+    weakDay = weakDayT
+elif monthStartsWith == "W":
+    weakDay = weakDayW
+elif monthStartsWith == "Th":
+    weakDay = weakDayTh
+elif monthStartsWith == "F":
+    weakDay = weakDayF
+elif monthStartsWith == "Sa":
+    weakDay = weakDaySa
+
+calenderNum = []
+calenderList = []
+
+for x in range(0,noOfDayInMonth):
+
+    d = x+1
+    if d == 1 or d%7 == 1:
+        y = str(d)+" "+weakDay[0]
+        calenderNum.append(y)
+    elif d == 2 or d%7 == 2:
+        y = str(d)+" "+weakDay[1]
+        calenderNum.append(y)
+    elif d == 3 or d%7 == 3:
+        y = str(d)+" "+weakDay[2]
+        calenderNum.append(y)
+    elif d == 4 or d%7 == 4:
+        y = str(d)+" "+weakDay[3]
+        calenderNum.append(y)
+    elif d == 5 or d%7 == 5:
+        y = str(d)+" "+weakDay[4]
+        calenderNum.append(y)
+    elif d == 6 or d%7 == 6:
+        y = str(d)+" "+weakDay[5]
+        calenderNum.append(y)
+    elif d == 7 or d%7 == 0:
+        y = str(d)+" "+weakDay[6]
+        calenderNum.append(y)
+    x = x + 1
+
+print(*calenderNum, sep ="\t")
